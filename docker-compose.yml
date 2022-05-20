@@ -7,7 +7,7 @@ services:
       context: ./fantom
       dockerfile: Dockerfile
     environment:
-      - SNAPSHOT_URL=https://download.fantom.network/opera_5may22.tgz
+      - SNAPSHOT_URL=https://download.fantom.network/snap/opera_5may22.tgz
     volumes:
       - "fantom:/datadir"
     expose:
