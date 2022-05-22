@@ -58,6 +58,19 @@ install docker dependencies
 
 
 # Change Docker Disk
-while initially doing this I found Docker autmatically installs to etc/var/lib or something along those lines
-I needed to copy the engine over to the disk in order for it to have memory to install the node
-i could have also custom confiured the way docker builds the images but there were some nuances here i avoided
+stop docker if running
+
+copy current datadir to new
+
+sudo rsync -aP /var/lib/docker/ /path/to/your/docker
+
+
+create daemon.json file in /etc/docker/daemon.json
+add:
+{
+"data-root": "/srv/new-drive/new-docker-root"
+}
+
+$> sudo systemctl daemon-reload
+$> sudo service docker start
+
