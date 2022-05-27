@@ -4,8 +4,8 @@ FROM golang:1.17-alpine as builder
 # Install packages we need
 RUN apk add --no-cache make gcc musl-dev linux-headers git
 
-# Make a folder to work in
-RUN mkdir /fantom
+# Make a folder to work in (need to change to nodepilot soon)
+RUN mkdir /home/ubuntu/fantom
 
 # Grab VERSION from Build Args
 ARG VERSION
